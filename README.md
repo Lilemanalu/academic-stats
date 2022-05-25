@@ -1,98 +1,87 @@
 
---Studi kasus dibawah merupakan gabungan dari beberapa studi kasus pada tugas pemrograman oleh dosen saya Pak Mario yang kemudian saya defenisikan ulang menjadi sebuah studi kasus baru--
-
+--The case study below is a combination of several case studies on programming assignments by my lecturer, which I then redefined into a recent case study--
 
 # Academic Stats
-Butet baru saja bertemu dengan salah seorang dosen pemrograman yang memintanya untuk mengembangkan suatu program sederhana untuk mensimulasikan entitas-entitas di lingkup dunia akademik. Sebenarnya, sang dosen telah mengembangkan desain dasar dari simulator dan Butet hanya diminta untuk mengimplementasikannya. 
+Butet had just met with one of the programming lecturers who asked him to develop a simple program to simulate entities in the academic world. The lecturer had developed the basic design of the Simulator, and Butet was only asked to implement it. 
 
+## Let's get started
+As a first step, the simulator will only deal with a few entities whose definition is clear, namely courses (```course```), students (```student```), and study plan (```enrollment```).
 
-## Mari memulai
-Sebagai langkah awal, simulator hanya akan menangani beberapa entitas yang definisinya sudah jelas, yakni mata kuliah (```course```), mahasiswa (```student```), dan rencana studi (```enrollment```).
+Here are the details of the entities in the simulator:
+1. A ```course``` has a course code (```code``` ), the name of the course (```name```, credit (```credit```), and minimum grade (```passing grade```). The credit score rule is "'0 < credit < = 8```.
+2. A ```student``` has an NIM (```id```'), the student's name ```name```, the class (```year```), and the study program (```study program```).
+3. A ```enrollment``` is the relationship between ```course``` and ```student```. A ```course``` can be contracted by many ```students``` and a ```student``` can contract many ```courses```. An ```enrollment``` is tied to a ```semester``` in an academic year ```academic year```. An ```enrellment``` has a ```course```, ```student```, ```academic year```, ```semester```, and the grades obtained by the student concerned (```grade```).
+4. There are three semesters, odd (```odd```), even (```even```), and short (```short```).
+5. There are eight letter value options (```grade```): ```A```, ```AB```, ```B```, ```BC```, ```C```, ```D```, ```E```, ```T```. In anticipation of a situation where a value has not been entered, then by default is set with ```None```. For each letter value can be converted to the number value ```4.0``` for the letter values ```A```, ```3.5``` for the letter value ```AB```, ```3.0``` for the letter value ```B```,', ```2.5``` for the letter value ```BC```, ```2.0``` for the letter value ```C```, ``` 1.0``` for the letter values ```D```, and ```0.0``` for the letter value ```E```' For the value of the letter ```T``` and when the value has not been given (```None```) it will be given the value of the number ```0.0```.
 
-Berikut adalah rincian entitas dalam simulator:
-1. Sebuah ```course``` memiliki kode mata kuliah (```code```), nama mata kuliah (```name```), kredit (```credit```), dan nilai minimum (```passing grade```). Aturan besaran nilai kredit adalah ```0 < credit <= 8```.
-2. Seorang ```student``` memiliki NIM (```id```), nama mahasiswa ```name```, angkatan (```year```), dan program studi (```study program```).
-3. Sebuah ```enrollment``` adalah relasi antara ```course``` dan ```student```. Sebuah ```course``` dapat dikontrak oleh banyak ```student``` dan seorang ```student``` dapat mengontrak banyak ```course```. Suatu ```enrollment``` terikat pada suatu ```semester``` di suatu tahun akademik ```academic year```. Sebuah ```enrellment``` memiliki sebuah ```course```, ```student```, ```academic year```, ```semester```, dan nilai yang diperoleh mahasiswa bersangkutan (```grade```).
-4. Terdapat tiga semester, ganjil (```odd```), genap (```even```), dan pendek (```short```).
-5. Terdapat delapan opsi nilai huruf (```grade```): ```A```, ```AB```, ```B```, ```BC```, ```C```, ```D```, ```E```, ```T```. Untuk mengantisipasi situasi di mana nilai belum dimasukkan, maka by default di-set dengan ```None```. Untuk setiap nilai huruf dapat dikonversi menjadi nilai angka ```4.0``` untuk nilai huruf ```A```, ```3.5``` untuk nilai huruf ```AB```, ```3.0``` untuk nilai huruf ```B```, ```2.5``` untuk nilai huruf ```BC```, ```2.0``` untuk nilai huruf ```C```, ```1.0``` untuk nilai huruf ```D```, dan ```0.0``` untuk nilai huruf ```E```. Untuk nilai huruf ```T``` dan ketika nilai belum diberikan (```None```) maka akan diberi nilai angka ```0.0```.
-
-Setelah mengetahui rincian entitas-entitas dalam simulator, Butet diberikan beberapa tugas kecil yang nantinya akan terbentuk menjadi akademik statistik.
-Berikut merupakan rincian tugas-tugas kecil yang harus diselesaikan Butet.
-
+After knowing the details of the entities in the Simulator, Butet was given some small tasks that would later form into academic statistics.
+Here are the details of the small tasks that Butet must complete.
 
 ## Task 01: Refining The Empty Class 
-Langkah pertama yang harus dilakukan Butet adalah melengkapi definisi dari tiga buah class berikut:
-1. ```academic.model.Course``` yang merepresentasikan entitas ```course```.
-2. ```academic.model.Student``` yang merepresentasikan entitas ```student```.
-3. ```academic.model.Enrollment``` yang merepresentasikan entitas ```enrollment```.
-
+The first step that Butet must do is to complete the definition of the following three classes:
+1. ```academic.model.Course``` which represents the entity ```course```'
+2. ```academic.model.Student``` which represents the entity ```student```'
+3. ```academic.model.Enrollment``` which represents the entity ```enrollment```'.
 
 ## Task 02: Add More 
-Pada tugas ini Butet diminta untuk mengembangkan sebuah driver (```academic.driver.Driver```) yang mampu menyimulasikan kemampuan penyimpanan multiple pada semua entitas (```academic.model.Course```, ```academic.model.Student```, dan ```academic.model.Enrollment```). Butet diarahkan untuk menggunakan array sebagai media penyimpanan. Lebih lanjut, driver juga harus memiliki kemampuan untuk menerima baris-baris masukan interaktif dari pengguna. Setiap baris masukan merepresentasikan data sebuah entitas. Sebuah baris masukan terdiri atas 5 segmen yang diseparasi dengan ```#```. Keempat segmen terakhir merepresentasikan data yang diperlukan untuk membentuk sebuah course. Untuk membedakan instruksi, ditambahkan sebuah segmen pada bagian awal input dengan spesifikasi sebagai berikut:
-1. ```course-add``` dimaksudkan untuk menambah sebuah entitas ```academic.model.Course```.
-2. ```student-add``` dimaksudkan untuk menambah sebuah entitas ```academic.model.Student```.
-3. ```enrollment-add``` dimaksudkan untuk menambah sebuah entitas ```academic.model.Enrollment```.
+In this task Butet was asked to develop a driver (```academic.driver.driver```) capable of simulating multiple storage capabilities on all entities (```academic.model.Course```,', ```academic.model.Student```, and ```academic.model.Enrollment```). Butet is directed to use arrays as storage media. Furthermore, drivers must also have the ability to receive interactive input lines from users. Each input line represents the data of an entity. An input line consists of 5 segments matched with ```#```. The last four segments represent the data needed to form a course. To distinguish the instructions for each entity, a segment is added at the beginning of the input with the following specifications:
+1. ```course-add``` is intended to add an entity ```academic.model.Course```.
+2. ```student-add``` is intended to add an entity ```academic.model.Student```'
+3. ```enrollment-add``` is intended to add an entity ```academic.model.Enrollment```'
 
-Pada saat eksekusi, driver akan terus-menerus membaca baris masukan hingga diperintahkan untuk berhenti. Perintah berhenti ditandai dengan ```---```.
-
+The driver will constantly read the input line at the execution time until it is ordered to stop. The stop command is marked with ```---```.
 
 ## Task 03: When Things Go Wrong 
-Sebuah ```enrollment``` hanya dapat dilakukan bila ```course``` dan ```student``` yang terlibat sudah terlebih dahulu didaftarkan. Bila belum didaftarkan, maka upaya ```enrollment``` harus dibatalkan karena ```course``` atau ```student``` yang terlibat **does not exist**. Pada tugas ini Butet diminta untuk mengembangkan suatu mekanisme penanganan eksepsi pada saat ```course``` atau ```student``` invalid. Butet harus menuliskan solusi dari task ini pada ```academic.driver.Driver```.
+An ```enrollment``` can only be done when the ```course``` and ```student``` involved have been first registered. If it has not been registered, then the ```enrollment``` attempt  must be canceled because the ```course``` or ```student``` involved **does not exist**. In this task, Butet was asked to develop a mechanism for handling exceptions during the invalid ```course```' or ```student```' invalid. Butet must write down the solution of this task on ```academic.driver.Driver```.
 
-Pemeriksaan terhadap validitas terlebih dahulu dilakukan terhadap ```course``` kemudian ```student```.
-
+An examination of the validity is first carried out on the ```course``` then ```student```.
 
 ## Task 04: Additional Entity 
-Pada tugas ini Butet diminta untuk menambahkan sebuah entitas baru ke dalam simulator yang merepresentasikan dosen (```lecturer```). Seorang dosen dapat dideskripsikan dengan NIDN (```id```), nama dosen (```name```), inisial (```initial```), alamat email (```email```), dan program studi (```study program```). Seorang dosen hanya terdaftar pada tepat satu program studi (```study program```).
+In this task, Butet was asked to add a new entity to the simulator that represented the lecturer (```lecturer```). A lecturer can be described by NIDN (```id```'), lecturer's name (```name```), initials (```initial```), email address (```email```), and study program (```study program```). A lecturer is only enrolled in exactly one study program (```study program```).
 
-Butet harus mengembangkan sebuah driver (```academic.driver.Driver```) yang merupakan kelanjutan dari **Task 03: When things go wrong**. Selain fitur-fitur yang sudah dikembangkan pada **Task 03: When things go wrong**, Butet juga harus melengkapi driver dengan fitur untuk mendaftarkan entitas dosen. Perintah yang digunakan ditandai dengan token ```lecturer-add``` yang diikuti dengan beberapa segmen data. Perlu diingat bahwa seorang dosen diidentifikasi dari NIDN-nya. Setiap dosen juga memiliki inisial serta email yang unik. 
-Di akhir eksekusi, driver akan menampilkan entitas-entitas dosen yang pernah diregistrasi. Daftar dosen ditampilkan sebelum solusi menampilkan daftar mata kuliah. 
-
+Butet had to develop a driver (```academic.driver.Driver```), which is a continuation of **Task 03: When things go wrong**. In addition to the features that have been developed in **Task 03: When things go wrong**, Butet must also equip drivers with features to register lecturer entities. The command used is marked with a token ```lecturer-add``` followed by several data segments. Keep in mind that a lecturer is identified from his NIDN. Each lecturer also has a unique initial and email. 
+At the end of the execution, the driver will display the lecturer entities that have been registered. The list of lecturers is displayed before the solution displays the list of courses. 
 
 ## Task 04: Updating Related Entities 
-Pada tugas ini Butet diminta untuk melakukan modifikasi solusi terhadap entitas mata kuliah (```course```) dengan menambahkan informasi dosen pengampu. Sebuah mata kuliah diampu oleh paling sedikit satu orang dosen tanpa batasan maksimum.
-Untuk memenuhi requirement tersebut, maka perlu dilakukan adaptasi pada format masukkan untuk melakukan registrasi sebuah mata kuliah dengan menambahkan sebuah segmen tambahan, daftar dosen (```lecturer-initial-list```). 
-Pada situasi mata kuliah diampu oleh lebih dari satu dosen, maka inisial dosen ditulis dengan tanda koma (```,```) sebagai separator. 
-Penambahan informasi pengampu juga memengaruhi format luaran. Informasi seorang dosen pengampu ditampilkan inisial dan alamat email. Dalam situasi terdapat lebih dari satu pengampu maka di tulis dengan semicolon (```;```) sebagai separator. 
+In this task, Butet was asked to make a solution modification to the course entity (```course```) by adding information to the lecturer. At least one lecturer occupies a course without maximum restrictions.
+To meet these requirements, it is necessary to adapt to the entered format to register a course by adding an additional segment, a list of lecturers (```lecturer-initial-list```)." 
+In the course being taught by more than one lecturer, the lecturer's initials are written with a comma (```,```) as a separator. 
+The addition of the lecturer information also affects the external format. The data of a lecturer is displayed in initials and email addresses. There is more than one mixer then written with a semicolon (```;```') as a separator in the situation. 
 
 
- 
 ## Task 05: Grading (academic.driverDriver1, 40pts)
-Dalam menyelesaikan tugas ini,  Butet diperbolehkan untuk mendefinisikan kelas-kelas lain jika diperlukan.
-Pada tugas ini Butet diminta untuk mengembangkan sebuah fitur yang memampukan pengguna mengeset nilai (```grade```) yang diperoleh seorang mahasiswa pada suatu mata kuliah. Nilai yang diberikan berupa nilai huruf, yakni ```A```, ```AB```, ```B```, ```BC```, ```C```, ```D```, dan ```E```.
-Untuk mengeset nilai, pengguna akan memasukkan sebaris perintah dengan format sebagai berikut.
+In completing this task, Butet is allowed to define other classes if needed.
+In this task, Butet was asked to develop a feature that allows users to set the grades (```grade```) obtained by a student in a course. The given values are the values of letters, namely ```A```, ```AB```, ```B```, ```BC```, ```C```, ```D```, and ```E```.
+To set a value, the user will enter a line of commands with the following format.
 
 ```bash
 enrollment-grade#<course-code>#<student-id>#<academic-year>#<semester>#<grade>
 ```
 
-Baris masukan terdiri atas 6 segmen yang diseparasi dengan hash sign (```#```). Segmen pertama adalah perintah yang diberikan dan diikuti dengan serangkaian data terkait rencana studi (```enrollment```) dan nilai (```grade```) yang diberikan. Simulator kemudian akan terlebih dahulu mencari rencana studi (```enrollment```) yang sesuai, bila ditemukan maka dilakukan update terhadap nilai dari rencana studi tersebut. Bila tidak, maka perintah diabaikan dan solusi menuju ke perintah berikutnya. Tidak ada keluaran apapun setelah Simulator selesai mengerjakan perintah ini.
-
+The input line consists of 6 segments matched with the hash sign (```#```). The first segment is the command given and followed by a series of data related to the study plan (```enrollment```) and the given value (```grade```) given. The Simulator will then first look for the appropriate study plan (```enrollment```) if it is found that an update is made to the value of the study plan. If not, the command is ignored, and the solution goes to the next command. There is no output after the Simulator has finished working on this command.
 
 ## Task 06: Student's GPA 
-Pada tugas ini Butet diminta untuk mengembangkan sebuah fitur yang akan menampilkan info lengkap mengenai seorang mahasiswa beserta performa akademiknya. Performa akademik direpresentasikan dalam bentuk Indeks Prestasi Kumulatif (IPK) atau dikenal juga dengan Grade Point Average (GPA). Mekanisme penghitungan IPK dapat dilihat pada Buku Pedoman Akademik. IPK ditulis dalam 2 digit nilai presisi.
-Untuk menjalankan fitur ini, pengguna akan memberikan sebuah baris masukan dengan format sebagai berikut.
+In this task, Butet was asked to develop a feature that would display complete information about a student and his academic performance. Academic performance is represented in a Cumulative Achievement Index (GPA), known as Grade Point Average (GPA). The mechanism for calculating GPA can be seen in the Academic Manual. GPA is written in 2 digits of precision value.
+The user will provide an input line with the following format to run this feature.
 
 ```bash
 student-details#<student-id>
 ```
 
-Baris masukan terdiri atas 2 segmen yang diseparasi dengan hash sign (```#```). Segmen pertama adalah perintah yang diberikan dan diikuti dengan sebuah nomor induk mahasiswa (```student-id```) yang akan ditampilkan detil informasinya. Bila mahasiswa dimaksud belum tersimpan dalam Simulator, maka perintah akan diabaikan dan Simulator meneruskan ke baris masukan berikutnya. Sebaliknya, bila mahasiswa dengan identitas dimaksud tersimpan di dalam Simulator, maka Simulator akan menampilkan detil informasi dari yang bersangkutan beserta performa akademiknya. Berikut adalah format keluarannya.
+The input line consists of 2 segments matched with the hash sign (```#```). The first segment is a command given and followed by a student master number (```student-id```), displaying detailed information. If the student in question has not been saved in the Simulator, what will ignore the command, and the Simulator forwards to the next input line. Conversely, if the student with the identity is stored in the Simulator, the Simulator will display detailed information about the person concerned and his academic performance. Here is the output format.
 
 ```bash
 <student-id>|<name>|<year>|<study-program>|<gpa>|<total-credit>
 ```
 
-
 ## Task 07: Applying Inheritance 
-Pada tugas ini Butet diminta untuk menganalisis pekerjaan sebelumnya guna mencari aspek-aspek di mana inheritance berpotensi diaplikasikan. Butet dapat menerapkan pendekatan top-down maupun bottom-up untuk menemukan potensi tersebut.
-Setelah menemukan kemungkinan penerapan inheritance, Butet harus merealisasikan ide nya dengan me-refactor codebase yang telah dicreate sebelumnya.
-
+Butet was asked to analyze his previous work to look for aspects where What could potentially apply inheritance in this task. Butet can apply both top-down and bottom-up approaches to find that potential.
+After discovering the possibility of applying inheritance, Butet had to realize his idea by refactoring the codebase that What had created before.
 
 ## Task 08: Student's GPA 
-Pada tugas ini Butet diminta untuk me-revisit solusi sebelumnya sehingga mampu menangani kasus mengulang mata kuliah berulang. Sebagai contoh, seorang mahasiswa telah mengambil sebuah mata kuliah (misal Basisdata) pada dua semester berbeda. Pada pengambilan pertama mendapat nilai BC dan berikutnya mendapatkan nilai A. Merujuk pada Peraturan Akademik, nilai yang akan diakui adalah yang terakhir. Dengan demikian, perhitungan performa akademik juga akan menggunakan nilai terakhir. 
+In this task, Butet was asked to revisit the previous solution so that it could handle the case of repeating repeated courses. For example, a student has taken a course (e.g., Database) in two different semesters. The first take gets a BC grade, and the next gets an A. Referring to academic rules, the grade to be recognized is the last. Thus, the calculation of academic performance will also use the last value. 
 
-Berikut merupakan contoh masukan dan keluaran untuk tugas-tugas diatas.
+Here is an example of input and output for the tasks above.
 
 **Input**
 
@@ -100,7 +89,7 @@ Berikut merupakan contoh masukan dan keluaran untuk tugas-tugas diatas.
 lecturer-add#0130058501#Parmonangan Rotua Togatorop#PAT#mona.togatorop@del.ac.id#Information Systems
 lecturer-add#0114129002#Iustisia Natalia Simbolon#IUS#iustisia.simbolon@del.ac.id#Informatics
 lecturer-add#0124108201#Rosni Lumbantoruan#RSL#rosni@del.ac.id#Information Systems
-course-add#12S1101#Dasar Sistem Informasi#3#D#IUS
+course-add#12S1101#Basic Information System#3#D#IUS
 course-add#12S2102#Basisdata#4#C#PAT,IUS,RSL
 student-add#12S20001#Marcelino Manalu#2020#Information Systems
 student-add#12S20002#Yoga Sihombing#2020#Information Systems
@@ -128,26 +117,25 @@ student-details#12S20003
 **Output**
 
 ```bash
-12S20001|Marcelino Manalu|2020|Information Systems|3.00|7
-12S20002|Yoga Sihombing|2020|Information Systems|3.29|7
-12S20003|Marcel Simanjuntak|2020|Information Systems|3.29|7
-0130058501|Parmonangan Rotua Togatorop|PAT|mona.togatorop@del.ac.id|Information Systems
-0114129002|Iustisia Natalia Simbolon|IUS|iustisia.simbolon@del.ac.id|Informatics
-0124108201|Rosni Lumbantoruan|RSL|rosni@del.ac.id|Information Systems
-12S1101|Dasar Sistem Informasi|3|D|IUS (iustisia.simbolon@del.ac.id)
-12S2102|Basisdata|4|C|PAT (mona.togatorop@del.ac.id);IUS (iustisia.simbolon@del.ac.id);RSL (rosni@del.ac.id)
-12S20001|Marcelino Manalu|2020|Information Systems
-12S20002|Yoga Sihombing|2020|Information Systems
-12S20003|Marcel Simanjuntak|2020|Information Systems
-12S1101|12S20001|2020/2021|odd|B
-12S1101|12S20002|2020/2021|odd|B
-12S1101|12S20003|2020/2021|odd|B
-12S2102|12S20001|2021/2022|odd|B
-12S2102|12S20002|2021/2022|odd|AB
-12S2102|12S20003|2021/2022|odd|BC
-12S2102|12S20003|2022/2023|odd|AB
+12S20001| Marcelino Manalu| 2020| Information Systems| 3.00| 7
+12S20002| Sihombing Yoga| 2020| Information Systems| 3.29| 7
+12S20003| Marcel Simanjuntak| 2020| Information Systems| 3.29| 7
+0130058501| Parmonangan Rotua Togatorop| PAT| mona.togatorop@del.ac.id| Information Systems
+0114129002| Iustisia Natalia Simbolon| IUS| iustisia.simbolon@del.ac.id| Informatics
+0124108201| Rosni Lumbantoruan| RSL| rosni@del.ac.id| Information Systems
+12S1101| Basic Information Systems| 3| D| IUS (iustisia.simbolon@del.ac.id)
+12S2102| Database| 4| C| PAT (mona.togatorop@del.ac.id); IUS (iustisia.simbolon@del.ac.id); RSL (rosni@del.ac.id)
+12S20001| Marcelino Manalu| 2020| Information Systems
+12S20002| Sihombing Yoga| 2020| Information Systems
+12S20003| Marcel Simanjuntak| 2020| Information Systems
+12S1101| 12S20001| 2020/2021| odd| B
+12S1101| 12S20002| 2020/2021| odd| B
+12S1101| 12S20003| 2020/2021| odd| B
+12S2102| 12S20001| 2021/2022| odd| B
+12S2102| 12S20002| 2021/2022| odd| AB
+12S2102| 12S20003| 2021/2022| odd| BC
+12S2102| 12S20003| 2022/2023| odd| AB
 ```
-
 
 ## Submission
 1. ```src/academic/model/*.java```;
