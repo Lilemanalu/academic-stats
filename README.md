@@ -8,14 +8,14 @@ Butet had just met with one of the programming lecturers who asked him to develo
 As a first step, the simulator will only deal with a few entities whose definition is clear, namely courses (```course```), students (```student```), and study plan (```enrollment```).
 
 Here are the details of the entities in the simulator:
-1. A ```course``` has a course code (```code``` ), the name of the course (```name```, credit (```credit```), and minimum grade (```passing grade```). The credit score rule is "'0 < credit < = 8```.
-2. A ```student``` has an NIM (```id```'), the student's name ```name```, the class (```year```), and the study program (```study program```).
-3. A ```enrollment``` is the relationship between ```course``` and ```student```. A ```course``` can be contracted by many ```students``` and a ```student``` can contract many ```courses```. An ```enrollment``` is tied to a ```semester``` in an academic year ```academic year```. An ```enrellment``` has a ```course```, ```student```, ```academic year```, ```semester```, and the grades obtained by the student concerned (```grade```).
+1. A ```course``` has a course code (```code``` ), the name of the course (```name```, credit (```credit```), and minimum grade (```passing grade```). The credit score rule is ```0 < credit < = 8```.
+2. A ```student``` has an student's id (```id```'), the student's name ```name```, the entrance year (```year```), and the study program (```study program```).
+3. An ```enrollment``` is the relationship between ```course``` and ```student```. A ```course``` can be contracted by many ```students``` and a ```student``` can contract many ```courses```. An ```enrollment``` is tied to a ```semester``` in an academic year ```academic year```. An ```enrollment``` has a ```course```, ```student```, ```academic year```, ```semester```, and the grades obtained by the student concerned (```grade```).
 4. There are three semesters, odd (```odd```), even (```even```), and short (```short```).
-5. There are eight letter value options (```grade```): ```A```, ```AB```, ```B```, ```BC```, ```C```, ```D```, ```E```, ```T```. In anticipation of a situation where a value has not been entered, then by default is set with ```None```. For each letter value can be converted to the number value ```4.0``` for the letter values ```A```, ```3.5``` for the letter value ```AB```, ```3.0``` for the letter value ```B```,', ```2.5``` for the letter value ```BC```, ```2.0``` for the letter value ```C```, ``` 1.0``` for the letter values ```D```, and ```0.0``` for the letter value ```E```' For the value of the letter ```T``` and when the value has not been given (```None```) it will be given the value of the number ```0.0```.
+5. There are eight letter value options (```grade```): ```A```, ```AB```, ```B```, ```BC```, ```C```, ```D```, ```E```, ```T```. In anticipation of a situation where a value has not been entered, then by default is set with ```None```. For each letter value can be converted to the number value ```4.0``` for the letter values ```A```, ```3.5``` for the letter value ```AB```, ```3.0``` for the letter value ```B```,', ```2.5``` for the letter value ```BC```, ```2.0``` for the letter value ```C```, ``` 1.0``` for the letter values ```D```, and ```0.0``` for the letter value ```E```. For the value of the letter ```T``` and when the value has not been given (```None```) it will be given the value of the number ```0.0```.
 
 After knowing the details of the entities in the Simulator, Butet was given some small tasks that would later form into academic statistics.
-Here are the details of the small tasks that Butet must complete.
+Here are the details of the small tasks that Butet must done.
 
 ## Task 01: Refining The Empty Class 
 The first step that Butet must do is to complete the definition of the following three classes:
@@ -29,10 +29,10 @@ In this task Butet was asked to develop a driver (```academic.driver.driver```) 
 2. ```student-add``` is intended to add an entity ```academic.model.Student```'
 3. ```enrollment-add``` is intended to add an entity ```academic.model.Enrollment```'
 
-The driver will constantly read the input line at the execution time until it is ordered to stop. The stop command is marked with ```---```.
+The driver will constantly read the input line at the execution time until it is commanded to stop. The stop command is marked with ```---```.
 
 ## Task 03: When Things Go Wrong 
-An ```enrollment``` can only be done when the ```course``` and ```student``` involved have been first registered. If it has not been registered, then the ```enrollment``` attempt  must be canceled because the ```course``` or ```student``` involved **does not exist**. In this task, Butet was asked to develop a mechanism for handling exceptions during the invalid ```course```' or ```student```' invalid. Butet must write down the solution of this task on ```academic.driver.Driver```.
+An ```enrollment``` can only be done when the ```course``` and ```student``` involved have been first registered. If it has not been registered, then the ```enrollment``` attempt  must be canceled because the ```course``` or ```student``` involved **does not exist**. In this task, Butet was asked to develop a mechanism for handling exceptions during the invalid ```course```' or ```student``` invalid. Butet must write down the solution of this task on ```academic.driver.Driver```.
 
 An examination of the validity is first carried out on the ```course``` then ```student```.
 
@@ -46,7 +46,7 @@ At the end of the execution, the driver will display the lecturer entities that 
 In this task, Butet was asked to make a solution modification to the course entity (```course```) by adding information to the lecturer. At least one lecturer occupies a course without maximum restrictions.
 To meet these requirements, it is necessary to adapt to the entered format to register a course by adding an additional segment, a list of lecturers (```lecturer-initial-list```)." 
 In the course being taught by more than one lecturer, the lecturer's initials are written with a comma (```,```) as a separator. 
-The addition of the lecturer information also affects the external format. The data of a lecturer is displayed in initials and email addresses. There is more than one mixer then written with a semicolon (```;```') as a separator in the situation. 
+The addition of the lecturer information also affects the external format. The data of a lecturer is displayed in initials and email addresses. A semicolon (```;```') is written as a separator in this situation. 
 
 
 ## Task 05: Grading (academic.driverDriver1, 40pts)
@@ -61,7 +61,7 @@ enrollment-grade#<course-code>#<student-id>#<academic-year>#<semester>#<grade>
 The input line consists of 6 segments matched with the hash sign (```#```). The first segment is the command given and followed by a series of data related to the study plan (```enrollment```) and the given value (```grade```) given. The Simulator will then first look for the appropriate study plan (```enrollment```) if it is found that an update is made to the value of the study plan. If not, the command is ignored, and the solution goes to the next command. There is no output after the Simulator has finished working on this command.
 
 ## Task 06: Student's GPA 
-In this task, Butet was asked to develop a feature that would display complete information about a student and his academic performance. Academic performance is represented in a Cumulative Achievement Index (GPA), known as Grade Point Average (GPA). The mechanism for calculating GPA can be seen in the Academic Manual. GPA is written in 2 digits of precision value.
+In this task, Butet was asked to develop a feature that would display complete information about a student and his academic performance. Academic performance is represented in a Cumulative Achievement Index, known as Grade Point Average (GPA). The mechanism for calculating GPA can be seen in the Academic Manual. GPA is written in 2 digits of precision value.
 The user will provide an input line with the following format to run this feature.
 
 ```bash

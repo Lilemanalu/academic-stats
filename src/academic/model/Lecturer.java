@@ -2,6 +2,7 @@ package academic.model;
 
 /**
  * @author Lile 
+ * @author Daniel
  */
 
 public class Lecturer {

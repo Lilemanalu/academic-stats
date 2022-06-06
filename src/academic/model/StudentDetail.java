@@ -4,6 +4,7 @@ import java.text.DecimalFormat;
 
 /**
  * @author Lile 
+ * @author Daniel
  */
 
 public class StudentDetail extends Student{
