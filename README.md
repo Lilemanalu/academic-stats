@@ -1,5 +1,4 @@
-
---The case study below is a combination of several case studies on programming assignments by my lecturer, which I then redefined into a recent case study--
+The case study below is a combination of several case studies on programming assignments by my lecturer, which I then redefined into a recent case study.
 
 # Academic Stats
 Butet had just met with one of the programming lecturers who asked him to develop a simple program to simulate entities in the academic world. The lecturer had developed the basic design of the Simulator, and Butet was only asked to implement it. 
