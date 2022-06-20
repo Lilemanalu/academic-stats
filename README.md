@@ -18,9 +18,9 @@ Here are the details of the small tasks that Butet must done.
 
 ## Task 01: Refining The Empty Class 
 The first step that Butet must do is to complete the definition of the following three classes:
-1. ```academic.model.Course``` which represents the entity ```course```
-2. ```academic.model.Student``` which represents the entity ```student```
-3. ```academic.model.Enrollment``` which represents the entity ```enrollment```
+1. ```academic.model.Course``` which represents the entity ```course```'
+2. ```academic.model.Student``` which represents the entity ```student```'
+3. ```academic.model.Enrollment``` which represents the entity ```enrollment```'.
 
 ## Task 02: Add More 
 In this task Butet was asked to develop a driver (```academic.driver.driver```) capable of simulating multiple storage capabilities on all entities (```academic.model.Course```,', ```academic.model.Student```, and ```academic.model.Enrollment```). Butet is directed to use arrays as storage media. Furthermore, drivers must also have the ability to receive interactive input lines from users. Each input line represents the data of an entity. An input line consists of 5 segments matched with ```#```. The last four segments represent the data needed to form a course. To distinguish the instructions for each entity, a segment is added at the beginning of the input with the following specifications:
