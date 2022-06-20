@@ -1,5 +1,4 @@
-
---The case study below is a combination of several case studies on programming assignments by my lecturer, which I then redefined into a recent case study--
+The case study below is a combination of several case studies on programming assignments by my lecturer, which I then redefined into a recent case study.
 
 # Academic Stats
 Butet had just met with one of the programming lecturers who asked him to develop a simple program to simulate entities in the academic world. The lecturer had developed the basic design of the Simulator, and Butet was only asked to implement it. 
@@ -25,9 +24,9 @@ The first step that Butet must do is to complete the definition of the following
 
 ## Task 02: Add More 
 In this task Butet was asked to develop a driver (```academic.driver.driver```) capable of simulating multiple storage capabilities on all entities (```academic.model.Course```,', ```academic.model.Student```, and ```academic.model.Enrollment```). Butet is directed to use arrays as storage media. Furthermore, drivers must also have the ability to receive interactive input lines from users. Each input line represents the data of an entity. An input line consists of 5 segments matched with ```#```. The last four segments represent the data needed to form a course. To distinguish the instructions for each entity, a segment is added at the beginning of the input with the following specifications:
-1. ```course-add``` is intended to add an entity ```academic.model.Course```.
-2. ```student-add``` is intended to add an entity ```academic.model.Student```'
-3. ```enrollment-add``` is intended to add an entity ```academic.model.Enrollment```'
+1. ```course-add``` is intended to add an entity ```academic.model.Course```
+2. ```student-add``` is intended to add an entity ```academic.model.Student```
+3. ```enrollment-add``` is intended to add an entity ```academic.model.Enrollment```
 
 The driver will constantly read the input line at the execution time until it is commanded to stop. The stop command is marked with ```---```.
 
