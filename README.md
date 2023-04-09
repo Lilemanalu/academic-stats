@@ -134,7 +134,3 @@ student-details#12S20003
 12S2102| 12S20003| 2021/2022| odd| BC
 12S2102| 12S20003| 2022/2023| odd| AB
 ```
-
-## Submission
-1. ```src/academic/model/*.java```;
-2. ```src/academic/driver/*.java```;
